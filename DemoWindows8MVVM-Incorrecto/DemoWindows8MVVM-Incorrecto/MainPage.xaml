@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="DemoWindows8MVVM_Incorrecto.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DemoWindows8MVVM_Incorrecto"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Nombre: " VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox x:Name="txtNombre" Grid.Column="1" Margin="2" TextChanged="txtNombre_TextChanged"/>
+        <TextBlock Text="Apellido: " Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox x:Name="txtApellido" Grid.Row="1"  Grid.Column="1" Margin="2" TextChanged="txtApellido_TextChanged"/>
+        <TextBlock Text="Fecha Nac.: " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <DatePicker x:Name="dpFechaNac" Grid.Row="2"  Grid.Column="1" Margin="2" DateChanged="dpFechaNac_DateChanged"/>
+        <Button x:Name="btnCambiarValores" Content="Cambiar" Grid.Row="2" Grid.Column="2" Margin="2" Width="100" Height="40" Grid.ColumnSpan="2" Click="btnCambiarValores_Click" />
+        <TextBlock x:Name="txtMensaje" Grid.Row="3" Grid.ColumnSpan="4" 
+                   VerticalAlignment="Center" 
+                   FontSize="22" FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+    </Grid>
+</Page>
