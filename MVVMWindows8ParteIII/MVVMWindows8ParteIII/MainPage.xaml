@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="MVVMWindows8ParteIII.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MVVMWindows8ParteIII"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Nombre: " VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox  Grid.Column="1" Margin="2" Text="{Binding Nombre, Mode=TwoWay}"/>
+
+        <TextBlock Text="Apellido: " Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox  Grid.Row="1"  Grid.Column="1" Margin="2" Text="{Binding Apellido, Mode=TwoWay}" />
+
+        <TextBlock Text="Fecha Nac.: " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <DatePicker  Grid.Row="2"  Grid.Column="1" Margin="2" Date="{Binding FechaNacimiento,Mode=TwoWay}"/>
+
+        <TextBlock  Grid.Row="3" Grid.ColumnSpan="4" 
+                   VerticalAlignment="Center"  Text="{Binding Mensaje}"
+                   FontSize="22" FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+    </Grid>
+</Page>
